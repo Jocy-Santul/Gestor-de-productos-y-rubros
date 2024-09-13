@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ProductosYRubros.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="inicio">
+        <button class="BotonesDefault" onclick="MostrarFormulario()">Formulario</button>
+        <button class="BotonesDefault" onclick="MostrarTabla()">Tabla de productos</button>
+    </div>
+
+    <div class="FormularioProductos" hidden>
+        <div class="botonesArriba">
+            <button class="BotonesDefault" onclick="VolverInicio()">Volver al inicio</button>
+            <button class="BotonesDefault" onclick="MostrarTabla()">Tabla de productos</button>
+        </div>
+        <input class="input" placeholder="Nombre del producto" type="text" id="Nombre">
+        <input class="input" placeholder="Precio del producto" type="number" id="Precio">
+        <input class="input" placeholder="Stock del producto" type="number" id="Stock">
+        <input class="input" placeholder="Rubro del producto" type="text" id="Rubro">
+    
+        <button class="cargarProducto" onclick="Agregar(Nombre.value, Precio.value, Stock.value, Rubro.value)">Agregar</button>
+    </div>
+
+    <div class="Tabla" hidden>
+        <div class="botonesArriba">
+            <button class="BotonesDefault" onclick="VolverInicio()">Volver al inicio</button>
+            <button class="BotonesDefault" onclick="MostrarFormulario()">Formulario</button>
+        </div>
+        <table>
+            <thead>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Rubro</th>
+                <th colspan="2">Acciones</th>
+            </thead>
+            <tbody id="Tabla">
+            
+            </tbody>
+        </table>
+    </div>
+
+    <dialog id="formEditar">
+        <input class="input" id="PrecioEditado" type="number" placeholder="Ingrese el nuevo precio">
+        <input class="input" id="StockEditado" type="number" placeholder="Ingrese el nuevo stock">
+        <button id="editarBoton">Editar</button>
+    </dialog>
+    <script src="ProductosYRubros.js"></script>
+</body>
+</html>
